@@ -52,7 +52,31 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <!-- Specify the main class to be executed -->
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>org.example.Main</Main-Class> <!-- Replace with your actual main class -->
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.12.1</version>  <!-- Use the latest version -->
+            </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>local-repo</id>
+            <url>file:///D:/my-local-maven-repo</url>
+        </repository>
+    </distributionManagement>
 
 </project>
